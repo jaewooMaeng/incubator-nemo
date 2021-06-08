@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 package org.apache.nemo.runtime.master.scheduler;
 
 import org.apache.nemo.runtime.common.plan.Task;
@@ -28,31 +29,18 @@ import java.util.Collection;
 import java.util.OptionalInt;
 
 /**
- * This policy chooses a set of Executors, on which have minimum running Tasks.
+ * This policy chooses a set of Executors, considering WAN environment.
  */
 @ThreadSafe
 @DriverSide
-public final class MinOccupancyFirstSchedulingPolicy implements SchedulingPolicy {
+public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
 
   @Inject
-  private MinOccupancyFirstSchedulingPolicy() {
+  private WANAwareSchedulingPolicy() {
   }
 
   @Override
   public ExecutorRepresenter selectExecutor(final Collection<ExecutorRepresenter> executors, final Task task) {
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-    System.out.println(task);
-    System.out.println(executors);
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
-
     final OptionalInt minOccupancy =
       executors.stream()
         .map(ExecutorRepresenter::getNumOfRunningTasks)
