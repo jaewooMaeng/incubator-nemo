@@ -46,7 +46,9 @@ public final class MinOccupancyFirstSchedulingPolicy implements SchedulingPolicy
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     System.out.println("task");
-    System.out.println(task.getAncestors());
+    System.out.println(task.getSerializedIRDag());
+    System.out.println("input edge");
+    System.out.println(task.getTaskIncomingEdges());
     System.out.println("executors");
     System.out.println(executors.iterator().next().getNodeName());
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
