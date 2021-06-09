@@ -39,12 +39,6 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
   private WANAwareSchedulingPolicy() {
   }
 
-  // 1. cluster를 읽는다. x
-  // 2. tree를 읽는다.
-  // 3. bw의 정보를 datarate으로 활용한다.
-  // 4. data 
-
-
   @Override
   public ExecutorRepresenter selectExecutor(final Collection<ExecutorRepresenter> executors, final Task task) {
     final OptionalInt minOccupancy =
