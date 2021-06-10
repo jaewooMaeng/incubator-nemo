@@ -18,14 +18,21 @@
  */
 package org.apache.nemo.runtime.master.scheduler;
 
+import org.apache.beam.repackaged.core.org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.nemo.runtime.common.plan.Task;
 import org.apache.nemo.runtime.master.resource.ExecutorRepresenter;
 import org.apache.reef.annotations.audience.DriverSide;
 
 import javax.annotation.concurrent.ThreadSafe;
 import javax.inject.Inject;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.OptionalInt;
+import java.util.Set;
 
 /**
  * This policy chooses a set of Executors, on which have minimum running Tasks.
@@ -33,24 +40,35 @@ import java.util.OptionalInt;
 @ThreadSafe
 @DriverSide
 public final class MinOccupancyFirstSchedulingPolicy implements SchedulingPolicy {
+  private final ExecutorRegistry executorRegistry;
 
   @Inject
-  private MinOccupancyFirstSchedulingPolicy() {
+  private MinOccupancyFirstSchedulingPolicy(final ExecutorRegistry executorRegistry) {
+    this.executorRegistry = executorRegistry;
   }
 
   @Override
   public ExecutorRepresenter selectExecutor(final Collection<ExecutorRepresenter> executors, final Task task) {
+
+    Path pathToFile = Paths.get("inputs/tree.txt");
+    System.out.println(pathToFile.toAbsolutePath());
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
+    System.out.println("All executors");
+    executorRegistry.viewExecutors(fromExecutors -> {
+      final MutableObject<Set<ExecutorRepresenter>> allExecutors = new MutableObject<>(fromExecutors);
+      System.out.println(allExecutors.getValue().iterator().next().getNodeName());
+    });
     System.out.println("task");
+    System.out.println(task.getPlanId());
     System.out.println(task.getTaskId());
     System.out.println("input edge");
     System.out.println(task.getTaskIncomingEdges());
     System.out.println("executors");
-    System.out.println(executors.iterator().next().getNodeName());
+    System.out.println(executors);
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     System.out.println("++++++++++++++++++++++++++++++++++++++++++++");

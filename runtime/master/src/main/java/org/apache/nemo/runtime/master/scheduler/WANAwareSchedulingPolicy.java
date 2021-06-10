@@ -19,14 +19,20 @@
 
 package org.apache.nemo.runtime.master.scheduler;
 
+import org.apache.beam.repackaged.core.org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.nemo.runtime.common.plan.Task;
 import org.apache.nemo.runtime.master.resource.ExecutorRepresenter;
 import org.apache.reef.annotations.audience.DriverSide;
 
 import javax.annotation.concurrent.ThreadSafe;
 import javax.inject.Inject;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.OptionalInt;
+import java.util.Set;
 
 /**
  * This policy chooses a set of Executors, considering WAN environment.
@@ -34,13 +40,34 @@ import java.util.OptionalInt;
 @ThreadSafe
 @DriverSide
 public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
+  private final ExecutorRegistry executorRegistry;
+  private Collection<ExecutorRepresenter> allExecutors;
 
   @Inject
-  private WANAwareSchedulingPolicy() {
+  private WANAwareSchedulingPolicy(final ExecutorRegistry executorRegistry) {
+    this.executorRegistry = executorRegistry;
   }
 
   @Override
   public ExecutorRepresenter selectExecutor(final Collection<ExecutorRepresenter> executors, final Task task) {
+
+    byte[] jsonData = null;
+
+    try {
+      jsonData = Files.readAllBytes(Paths.get("examples/resources/inputs/tree.txt"));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    String tree = new String(jsonData, StandardCharsets.UTF_8);
+
+    System.out.println(tree);
+
+    executorRegistry.viewExecutors(fromExecutors -> {
+      final MutableObject<Set<ExecutorRepresenter>> allExecutorsSet = new MutableObject<>(fromExecutors);
+      allExecutors = allExecutorsSet.getValue();
+    });
+
     final OptionalInt minOccupancy =
       executors.stream()
         .map(ExecutorRepresenter::getNumOfRunningTasks)
