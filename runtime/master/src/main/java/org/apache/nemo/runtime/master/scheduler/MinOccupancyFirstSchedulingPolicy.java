@@ -51,7 +51,9 @@ public final class MinOccupancyFirstSchedulingPolicy implements SchedulingPolicy
 
   @Override
   public ExecutorRepresenter selectExecutor(final Collection<ExecutorRepresenter> executors, final Task task) {
-
+    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
+    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
+    System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
     byte[] jsonData = null;
 
     try {
