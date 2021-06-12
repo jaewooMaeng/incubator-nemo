@@ -160,17 +160,55 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
 
     } else {
       String chosenCloseNode = closeNodes.stream().skip((int) (closeNodes.size() * Math.random())).findFirst().orElseThrow(() -> new RuntimeException("No such node"));
+      Collection<ExecutorRepresenter> executorsWithoutClosest;
+
+      Boolean closestNodeInExecutors = Boolean.FALSE;
+      Integer occupancyOfClosestNode = Integer.MAX_VALUE;
+      for (ExecutorRepresenter executor : executors) {
+        if (executor.getNodeName() == chosenCloseNode) {
+          closestNodeInExecutors = Boolean.TRUE;
+          occupancyOfClosestNode = executor.getNumOfRunningTasks();
+          break;
+        }
+      }
+      if (closestNodeInExecutors) {
+        executorsWithoutClosest = executors.stream().filter(i-> i.getNodeName() != chosenCloseNode).collect(Collectors.toList());
+      } else {
+        executorsWithoutClosest = executors;
+      }
+
+      if (executorsWithoutClosest.stream().count() == 0) {
+        return executors.stream()
+          .findFirst()
+          .orElseThrow(() -> new RuntimeException("No such executor"));
+      }
 
       final OptionalInt minLatency =
-        executors.stream()
+        executorsWithoutClosest.stream()
           .map(ExecutorRepresenter::getNodeName)
-          .mapToInt(i -> costSpace.get(chosenCloseNode).get(i)).min();
+          .mapToInt(i -> costSpace
+            .get(chosenCloseNode)
+            .get(i))
+          .min();
 
       if (!minLatency.isPresent()) {
         throw new RuntimeException("Cannot find min latency");
       }
 
-      return executors.stream()
+      if (closestNodeInExecutors) {
+        ExecutorRepresenter resultCandidateExecutor = executorsWithoutClosest.stream()
+          .filter(executor -> costSpace.get(chosenCloseNode).get(executor.getNodeName()) == minLatency.getAsInt())
+          .findFirst()
+          .orElseThrow(() -> new RuntimeException("No such executor"));
+        if (resultCandidateExecutor.getNumOfRunningTasks() > occupancyOfClosestNode) {
+          return executors.stream()
+            .filter(executor -> executor.getNodeName() == chosenCloseNode)
+            .findFirst()
+            .orElseThrow(() -> new RuntimeException("No such executor"));
+        }
+      }
+
+      return executorsWithoutClosest.stream()
         .filter(executor -> costSpace.get(chosenCloseNode).get(executor.getNodeName()) == minLatency.getAsInt())
         .findFirst()
         .orElseThrow(() -> new RuntimeException("No such executor"));
