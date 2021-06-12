@@ -182,6 +182,10 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
           .orElseThrow(() -> new RuntimeException("No such executor"));
       }
 
+      if (costSpace.get(chosenCloseNode) == null) {
+        return minOccupancySelectExecutor(executors, task);
+      }
+
       final OptionalInt minLatency =
         executorsWithoutClosest.stream()
           .map(ExecutorRepresenter::getNodeName)
