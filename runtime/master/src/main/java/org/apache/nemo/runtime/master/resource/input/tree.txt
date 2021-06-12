@@ -1,5 +1,5 @@
 {
-  "willy-3/willy-4": {
+  "NODE3/NODE4": {
     "bw": "922517504 bytes/sec",
     "msg_rate": "27154 /sec",
     "send_cost": "1919786662 ns/GB",
@@ -10,7 +10,7 @@
     "loc_cpus_used": "167 % cpus",
     "rem_cpus_used": "163 % cpus"
   },
-  "willy-16/willy-2": {
+  "NODE16/NODE2": {
     "bw": "11010048 bytes/sec",
     "msg_rate": "15 /sec",
     "send_cost": "133357638308 ns/GB",
@@ -21,7 +21,7 @@
     "loc_cpus_used": "148 % cpus",
     "rem_cpus_used": "148 % cpus"
   },
-  "willy-9/willy-m": {
+  "NODE9/NODEm": {
     "bw": "851968 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "424319744662 ns/GB",
@@ -32,7 +32,7 @@
     "loc_cpus_used": "102 % cpus",
     "rem_cpus_used": "144 % cpus"
   },
-  "willy-14/willy-15": {
+  "NODE14/NODE15": {
     "bw": "11042816 bytes/sec",
     "msg_rate": "31 /sec",
     "send_cost": "122852818608 ns/GB",
@@ -43,7 +43,7 @@
     "loc_cpus_used": "145 % cpus",
     "rem_cpus_used": "144 % cpus"
   },
-  "willy-12/willy-13": {
+  "NODE12/NODE13": {
     "bw": "80805888 bytes/sec",
     "msg_rate": "64 /sec",
     "send_cost": "17752608119 ns/GB",
@@ -54,7 +54,7 @@
     "loc_cpus_used": "152 % cpus",
     "rem_cpus_used": "150 % cpus"
   },
-  "willy-7/willy-8": {
+  "NODE7/NODE8": {
     "bw": "938115072 bytes/sec",
     "msg_rate": "13920 /sec",
     "send_cost": "1867315719 ns/GB",
@@ -65,7 +65,7 @@
     "loc_cpus_used": "150 % cpus",
     "rem_cpus_used": "148 % cpus"
   },
-  "willy-10/willy-11": {
+  "NODE10/NODE11": {
     "bw": "17498112 bytes/sec",
     "msg_rate": "19 /sec",
     "send_cost": "71542074293 ns/GB",
@@ -76,7 +76,7 @@
     "loc_cpus_used": "141 % cpus",
     "rem_cpus_used": "152 % cpus"
   },
-  "willy-5/willy-6": {
+  "NODE5/NODE6": {
     "bw": "942473216 bytes/sec",
     "msg_rate": "18906 /sec",
     "send_cost": "1895633261 ns/GB",
@@ -87,7 +87,7 @@
     "loc_cpus_used": "157 % cpus",
     "rem_cpus_used": "158 % cpus"
   },
-  "willy-2/willy-3": {
+  "NODE2/NODE3": {
     "bw": "15990784 bytes/sec",
     "msg_rate": "19 /sec",
     "send_cost": "80596233821 ns/GB",
@@ -98,7 +98,7 @@
     "loc_cpus_used": "140 % cpus",
     "rem_cpus_used": "154 % cpus"
   },
-  "willy-1/willy-4": {
+  "NODE1/NODE4": {
     "bw": "17563648 bytes/sec",
     "msg_rate": "18 /sec",
     "send_cost": "74452365315 ns/GB",
@@ -109,7 +109,7 @@
     "loc_cpus_used": "140 % cpus",
     "rem_cpus_used": "150 % cpus"
   },
-  "willy-16/willy-m": {
+  "NODE16/NODEm": {
     "bw": "8978432 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "99493041021 ns/GB",
@@ -120,7 +120,7 @@
     "loc_cpus_used": "102 % cpus",
     "rem_cpus_used": "106 % cpus"
   },
-  "willy-13/willy-14": {
+  "NODE13/NODE14": {
     "bw": "946470912 bytes/sec",
     "msg_rate": "17618 /sec",
     "send_cost": "1734552396 ns/GB",
@@ -131,7 +131,7 @@
     "loc_cpus_used": "162 % cpus",
     "rem_cpus_used": "164 % cpus"
   },
-  "willy-15/willy-9": {
+  "NODE15/NODE9": {
     "bw": "10616832 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "81216136115 ns/GB",
@@ -142,7 +142,7 @@
     "loc_cpus_used": "62 % cpus",
     "rem_cpus_used": "80.5 % cpus"
   },
-  "willy-12/willy-8": {
+  "NODE12/NODE8": {
     "bw": "18415616 bytes/sec",
     "msg_rate": "20 /sec",
     "send_cost": "72265219246 ns/GB",
@@ -153,7 +153,7 @@
     "loc_cpus_used": "55 % cpus",
     "rem_cpus_used": "146 % cpus"
   },
-  "willy-10/willy-7": {
+  "NODE10/NODE7": {
     "bw": "266797056 bytes/sec",
     "msg_rate": "280 /sec",
     "send_cost": "4135577116 ns/GB",
@@ -164,7 +164,7 @@
     "loc_cpus_used": "104 % cpus",
     "rem_cpus_used": "150 % cpus"
   },
-  "willy-1/willy-m": {
+  "NODE1/NODEm": {
     "bw": "947388416 bytes/sec",
     "msg_rate": "21702 /sec",
     "send_cost": "1200857362 ns/GB",
@@ -175,7 +175,7 @@
     "loc_cpus_used": "111 % cpus",
     "rem_cpus_used": "154 % cpus"
   },
-  "willy-2/willy-4": {
+  "NODE2/NODE4": {
     "bw": "16482304 bytes/sec",
     "msg_rate": "18 /sec",
     "send_cost": "81603782466 ns/GB",
@@ -186,7 +186,7 @@
     "loc_cpus_used": "144 % cpus",
     "rem_cpus_used": "151 % cpus"
   },
-  "willy-11/willy-6": {
+  "NODE11/NODE6": {
     "bw": "11010048 bytes/sec",
     "msg_rate": "15 /sec",
     "send_cost": "119171546721 ns/GB",
@@ -197,7 +197,7 @@
     "loc_cpus_used": "150 % cpus",
     "rem_cpus_used": "131 % cpus"
   },
-  "willy-3/willy-5": {
+  "NODE3/NODE5": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "send_cost": "1268659356616 ns/GB",
@@ -208,7 +208,7 @@
     "loc_cpus_used": "146 % cpus",
     "rem_cpus_used": "154 % cpus"
   },
-  "willy-14/willy-16": {
+  "NODE14/NODE16": {
     "bw": "32899072 bytes/sec",
     "msg_rate": "31 /sec",
     "send_cost": "32214597215 ns/GB",
@@ -219,7 +219,7 @@
     "loc_cpus_used": "104 % cpus",
     "rem_cpus_used": "145 % cpus"
   },
-  "willy-13/willy-15": {
+  "NODE13/NODE15": {
     "bw": "35160064 bytes/sec",
     "msg_rate": "31 /sec",
     "send_cost": "28515974920 ns/GB",
@@ -230,7 +230,7 @@
     "loc_cpus_used": "118 % cpus",
     "rem_cpus_used": "144 % cpus"
   },
-  "willy-1/willy-2": {
+  "NODE1/NODE2": {
     "bw": "947879936 bytes/sec",
     "msg_rate": "11514 /sec",
     "send_cost": "1789825580 ns/GB",
@@ -241,7 +241,7 @@
     "loc_cpus_used": "149 % cpus",
     "rem_cpus_used": "156 % cpus"
   },
-  "willy-8/willy-9": {
+  "NODE8/NODE9": {
     "bw": "323944448 bytes/sec",
     "msg_rate": "280 /sec",
     "send_cost": "3548198295 ns/GB",
@@ -252,7 +252,7 @@
     "loc_cpus_used": "100 % cpus",
     "rem_cpus_used": "104 % cpus"
   },
-  "willy-12/willy-7": {
+  "NODE12/NODE7": {
     "bw": "18513920 bytes/sec",
     "msg_rate": "20 /sec",
     "send_cost": "56124281848 ns/GB",
@@ -263,7 +263,7 @@
     "loc_cpus_used": "108 % cpus",
     "rem_cpus_used": "101 % cpus"
   },
-  "willy-10/willy-m": {
+  "NODE10/NODEm": {
     "bw": "884736 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "412185455660 ns/GB",
@@ -274,7 +274,7 @@
     "loc_cpus_used": "100 % cpus",
     "rem_cpus_used": "110 % cpus"
   },
-  "willy-4/willy-6": {
+  "NODE4/NODE6": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "send_cost": "427990416051 ns/GB",
@@ -285,7 +285,7 @@
     "loc_cpus_used": "106 % cpus",
     "rem_cpus_used": "140 % cpus"
   },
-  "willy-1/willy-15": {
+  "NODE1/NODE15": {
     "bw": "10420224 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "90203895565 ns/GB",
@@ -296,7 +296,7 @@
     "loc_cpus_used": "114 % cpus",
     "rem_cpus_used": "101 % cpus"
   },
-  "willy-13/willy-2": {
+  "NODE13/NODE2": {
     "bw": "4915200 bytes/sec",
     "msg_rate": "10 /sec",
     "send_cost": "220318223891 ns/GB",
@@ -307,7 +307,7 @@
     "loc_cpus_used": "139 % cpus",
     "rem_cpus_used": "51.5 % cpus"
   },
-  "willy-16/willy-3": {
+  "NODE16/NODE3": {
     "bw": "1736704 bytes/sec",
     "msg_rate": "8 /sec",
     "send_cost": "432851358747 ns/GB",
@@ -318,7 +318,7 @@
     "loc_cpus_used": "138 % cpus",
     "rem_cpus_used": "100 % cpus"
   },
-  "willy-11/willy-5": {
+  "NODE11/NODE5": {
     "bw": "10911744 bytes/sec",
     "msg_rate": "15 /sec",
     "send_cost": "110761764259 ns/GB",
@@ -329,7 +329,7 @@
     "loc_cpus_used": "146 % cpus",
     "rem_cpus_used": "137 % cpus"
   },
-  "willy-12/willy-m": {
+  "NODE12/NODEm": {
     "bw": "6389760 bytes/sec",
     "msg_rate": "12 /sec",
     "send_cost": "130242381194 ns/GB",
@@ -340,7 +340,7 @@
     "loc_cpus_used": "101 % cpus",
     "rem_cpus_used": "108 % cpus"
   },
-  "willy-14/willy-9": {
+  "NODE14/NODE9": {
     "bw": "19300352 bytes/sec",
     "msg_rate": "21 /sec",
     "send_cost": "46572071135 ns/GB",
@@ -351,7 +351,7 @@
     "loc_cpus_used": "106 % cpus",
     "rem_cpus_used": "103 % cpus"
   },
-  "willy-10/willy-8": {
+  "NODE10/NODE8": {
     "bw": "350191616 bytes/sec",
     "msg_rate": "280 /sec",
     "send_cost": "3098664292 ns/GB",
@@ -362,7 +362,7 @@
     "loc_cpus_used": "108 % cpus",
     "rem_cpus_used": "101 % cpus"
   },
-  "willy-1/willy-13": {
+  "NODE1/NODE13": {
     "bw": "4915200 bytes/sec",
     "msg_rate": "10 /sec",
     "send_cost": "151832504307 ns/GB",
@@ -373,7 +373,7 @@
     "loc_cpus_used": "99 % cpus",
     "rem_cpus_used": "104 % cpus"
   },
-  "willy-15/willy-4": {
+  "NODE15/NODE4": {
     "bw": "1769472 bytes/sec",
     "msg_rate": "9 /sec",
     "send_cost": "331148181973 ns/GB",
@@ -384,7 +384,7 @@
     "loc_cpus_used": "101 % cpus",
     "rem_cpus_used": "103 % cpus"
   },
-  "willy-6/willy-7": {
+  "NODE6/NODE7": {
     "bw": "80379904 bytes/sec",
     "msg_rate": "61 /sec",
     "send_cost": "13334696297 ns/GB",
@@ -395,7 +395,7 @@
     "loc_cpus_used": "102 % cpus",
     "rem_cpus_used": "101 % cpus"
   },
-  "willy-11/willy-3": {
+  "NODE11/NODE3": {
     "bw": "884736 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "447591155535 ns/GB",
@@ -406,7 +406,7 @@
     "loc_cpus_used": "106 % cpus",
     "rem_cpus_used": "106 % cpus"
   },
-  "willy-12/willy-16": {
+  "NODE12/NODE16": {
     "bw": "77660160 bytes/sec",
     "msg_rate": "55 /sec",
     "send_cost": "13922939645 ns/GB",
@@ -417,7 +417,7 @@
     "loc_cpus_used": "113 % cpus",
     "rem_cpus_used": "120 % cpus"
   },
-  "willy-2/willy-5": {
+  "NODE2/NODE5": {
     "bw": "425984 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "812823950232 ns/GB",
@@ -428,7 +428,7 @@
     "loc_cpus_used": "145 % cpus",
     "rem_cpus_used": "102 % cpus"
   },
-  "willy-14/willy-m": {
+  "NODE14/NODEm": {
     "bw": "4882432 bytes/sec",
     "msg_rate": "10 /sec",
     "send_cost": "158753053513 ns/GB",
@@ -439,7 +439,7 @@
     "loc_cpus_used": "105 % cpus",
     "rem_cpus_used": "106 % cpus"
   },
-  "willy-10/willy-9": {
+  "NODE10/NODE9": {
     "bw": "947290112 bytes/sec",
     "msg_rate": "15964 /sec",
     "send_cost": "1417681879 ns/GB",
@@ -450,7 +450,7 @@
     "loc_cpus_used": "117 % cpus",
     "rem_cpus_used": "124 % cpus"
   },
-  "willy-2/willy-m": {
+  "NODE2/NODEm": {
     "bw": "945455104 bytes/sec",
     "msg_rate": "18549 /sec",
     "send_cost": "1214199215 ns/GB",
@@ -461,7 +461,7 @@
     "loc_cpus_used": "108 % cpus",
     "rem_cpus_used": "112 % cpus"
   },
-  "willy-13/willy-8": {
+  "NODE13/NODE8": {
     "bw": "20676608 bytes/sec",
     "msg_rate": "21 /sec",
     "send_cost": "44561065833 ns/GB",
@@ -472,7 +472,7 @@
     "loc_cpus_used": "103 % cpus",
     "rem_cpus_used": "105 % cpus"
   },
-  "willy-1/willy-7": {
+  "NODE1/NODE7": {
     "bw": "1081344 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "462002238540 ns/GB",
@@ -483,7 +483,7 @@
     "loc_cpus_used": "123 % cpus",
     "rem_cpus_used": "100 % cpus"
   },
-  "willy-15/willy-6": {
+  "NODE15/NODE6": {
     "bw": "6127616 bytes/sec",
     "msg_rate": "12 /sec",
     "send_cost": "139376810914 ns/GB",
@@ -494,7 +494,7 @@
     "loc_cpus_used": "106 % cpus",
     "rem_cpus_used": "107 % cpus"
   },
-  "willy-12/willy-3": {
+  "NODE12/NODE3": {
     "bw": "819200 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "414461700947 ns/GB",
@@ -505,7 +505,7 @@
     "loc_cpus_used": "103 % cpus",
     "rem_cpus_used": "106 % cpus"
   },
-  "willy-11/willy-4": {
+  "NODE11/NODE4": {
     "bw": "917504 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "462002238540 ns/GB",
@@ -516,7 +516,7 @@
     "loc_cpus_used": "119 % cpus",
     "rem_cpus_used": "100 % cpus"
   },
-  "willy-16/willy-5": {
+  "NODE16/NODE5": {
     "bw": "5963776 bytes/sec",
     "msg_rate": "11 /sec",
     "send_cost": "128173827155 ns/GB",
@@ -527,7 +527,7 @@
     "loc_cpus_used": "60 % cpus",
     "rem_cpus_used": "116 % cpus"
   },
-  "willy-10/willy-14": {
+  "NODE10/NODE14": {
     "bw": "19267584 bytes/sec",
     "msg_rate": "21 /sec",
     "send_cost": "53598911638 ns/GB",
@@ -538,7 +538,7 @@
     "loc_cpus_used": "107 % cpus",
     "rem_cpus_used": "100 % cpus"
   },
-  "willy-13/willy-m": {
+  "NODE13/NODEm": {
     "bw": "4620288 bytes/sec",
     "msg_rate": "10 /sec",
     "send_cost": "169908673490 ns/GB",
@@ -549,7 +549,7 @@
     "loc_cpus_used": "101 % cpus",
     "rem_cpus_used": "110 % cpus"
   },
-  "willy-2/willy-9": {
+  "NODE2/NODE9": {
     "bw": "884736 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "358404111805 ns/GB",
@@ -560,7 +560,7 @@
     "loc_cpus_used": "107 % cpus",
     "rem_cpus_used": "96 % cpus"
   },
-  "willy-1/willy-8": {
+  "NODE1/NODE8": {
     "bw": "851968 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "453525141590 ns/GB",
@@ -571,7 +571,7 @@
     "loc_cpus_used": "126 % cpus",
     "rem_cpus_used": "110 % cpus"
   },
-  "willy-15/willy-7": {
+  "NODE15/NODE7": {
     "bw": "10452992 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "96260678708 ns/GB",
@@ -582,7 +582,7 @@
     "loc_cpus_used": "104 % cpus",
     "rem_cpus_used": "102 % cpus"
   },
-  "willy-11/willy-16": {
+  "NODE11/NODE16": {
     "bw": "81723392 bytes/sec",
     "msg_rate": "54 /sec",
     "send_cost": "14035206406 ns/GB",
@@ -593,7 +593,7 @@
     "loc_cpus_used": "112 % cpus",
     "rem_cpus_used": "60.5 % cpus"
   },
-  "willy-12/willy-4": {
+  "NODE12/NODE4": {
     "bw": "884736 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "461832678411 ns/GB",
@@ -604,7 +604,7 @@
     "loc_cpus_used": "114 % cpus",
     "rem_cpus_used": "106 % cpus"
   },
-  "willy-3/willy-6": {
+  "NODE3/NODE6": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "send_cost": "646063625104 ns/GB",
@@ -615,7 +615,7 @@
     "loc_cpus_used": "112 % cpus",
     "rem_cpus_used": "100 % cpus"
   },
-  "willy-14/willy-5": {
+  "NODE14/NODE5": {
     "bw": "12419072 bytes/sec",
     "msg_rate": "16 /sec",
     "send_cost": "77195768781 ns/GB",
@@ -626,7 +626,7 @@
     "loc_cpus_used": "102 % cpus",
     "rem_cpus_used": "105 % cpus"
   },
-  "willy-15/willy-16": {
+  "NODE15/NODE16": {
     "bw": "921796608 bytes/sec",
     "msg_rate": "16212 /sec",
     "send_cost": "1244952611 ns/GB",
@@ -637,7 +637,7 @@
     "loc_cpus_used": "106 % cpus",
     "rem_cpus_used": "121 % cpus"
   },
-  "willy-10/willy-13": {
+  "NODE10/NODE13": {
     "bw": "19202048 bytes/sec",
     "msg_rate": "21 /sec",
     "send_cost": "47609326248 ns/GB",
@@ -648,7 +648,7 @@
     "loc_cpus_used": "127 % cpus",
     "rem_cpus_used": "110 % cpus"
   },
-  "willy-8/willy-m": {
+  "NODE8/NODEm": {
     "bw": "884736 bytes/sec",
     "msg_rate": "8 /sec",
     "send_cost": "449625658803 ns/GB",
@@ -659,7 +659,7 @@
     "loc_cpus_used": "101 % cpus",
     "rem_cpus_used": "112 % cpus"
   },
-  "willy-11/willy-12": {
+  "NODE11/NODE12": {
     "bw": "927629312 bytes/sec",
     "msg_rate": "11395 /sec",
     "send_cost": "1462847409 ns/GB",
@@ -670,7 +670,7 @@
     "loc_cpus_used": "135 % cpus",
     "rem_cpus_used": "108 % cpus"
   },
-  "willy-1/willy-9": {
+  "NODE1/NODE9": {
     "bw": "884736 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "375283741812 ns/GB",
@@ -681,7 +681,7 @@
     "loc_cpus_used": "111 % cpus",
     "rem_cpus_used": "110 % cpus"
   },
-  "willy-2/willy-7": {
+  "NODE2/NODE7": {
     "bw": "884736 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "396728522473 ns/GB",
@@ -692,7 +692,7 @@
     "loc_cpus_used": "113 % cpus",
     "rem_cpus_used": "110 % cpus"
   },
-  "willy-14/willy-3": {
+  "NODE14/NODE3": {
     "bw": "425984 bytes/sec",
     "msg_rate": "5.99 /sec",
     "send_cost": "496480017536 ns/GB",
@@ -703,7 +703,7 @@
     "loc_cpus_used": "100 % cpus",
     "rem_cpus_used": "100 % cpus"
   },
-  "willy-11/willy-m": {
+  "NODE11/NODEm": {
     "bw": "7405568 bytes/sec",
     "msg_rate": "12 /sec",
     "send_cost": "116284449258 ns/GB",
@@ -714,7 +714,7 @@
     "loc_cpus_used": "101 % cpus",
     "rem_cpus_used": "98 % cpus"
   },
-  "willy-1/willy-12": {
+  "NODE1/NODE12": {
     "bw": "6455296 bytes/sec",
     "msg_rate": "13 /sec",
     "send_cost": "144589325975 ns/GB",
@@ -725,7 +725,7 @@
     "loc_cpus_used": "102 % cpus",
     "rem_cpus_used": "108 % cpus"
   },
-  "willy-10/willy-15": {
+  "NODE10/NODE15": {
     "bw": "10485760 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "85233015941 ns/GB",
@@ -736,7 +736,7 @@
     "loc_cpus_used": "114 % cpus",
     "rem_cpus_used": "110 % cpus"
   },
-  "willy-4/willy-5": {
+  "NODE4/NODE5": {
     "bw": "163840 bytes/sec",
     "msg_rate": "5 /sec",
     "send_cost": "847264297925 ns/GB",
@@ -747,7 +747,7 @@
     "loc_cpus_used": "110 % cpus",
     "rem_cpus_used": "102 % cpus"
   },
-  "willy-16/willy-6": {
+  "NODE16/NODE6": {
     "bw": "7503872 bytes/sec",
     "msg_rate": "12 /sec",
     "send_cost": "115698506743 ns/GB",
@@ -758,7 +758,7 @@
     "loc_cpus_used": "128 % cpus",
     "rem_cpus_used": "144 % cpus"
   },
-  "willy-2/willy-8": {
+  "NODE2/NODE8": {
     "bw": "851968 bytes/sec",
     "msg_rate": "7.5 /sec",
     "send_cost": "419616703261 ns/GB",
@@ -769,7 +769,7 @@
     "loc_cpus_used": "114 % cpus",
     "rem_cpus_used": "105 % cpus"
   },
-  "willy-13/willy-9": {
+  "NODE13/NODE9": {
     "bw": "19955712 bytes/sec",
     "msg_rate": "21 /sec",
     "send_cost": "50316561257 ns/GB",
@@ -780,7 +780,7 @@
     "loc_cpus_used": "110 % cpus",
     "rem_cpus_used": "103 % cpus"
   },
-  "willy-15/willy-m": {
+  "NODE15/NODEm": {
     "bw": "11829248 bytes/sec",
     "msg_rate": "15 /sec",
     "send_cost": "80206453463 ns/GB",
@@ -791,7 +791,7 @@
     "loc_cpus_used": "101 % cpus",
     "rem_cpus_used": "153 % cpus"
   },
-  "willy-11/willy-14": {
+  "NODE11/NODE14": {
     "bw": "75431936 bytes/sec",
     "msg_rate": "62 /sec",
     "send_cost": "16253503475 ns/GB",
@@ -802,7 +802,7 @@
     "loc_cpus_used": "95.5 % cpus",
     "rem_cpus_used": "102 % cpus"
   },
-  "willy-16/willy-4": {
+  "NODE16/NODE4": {
     "bw": "2359296 bytes/sec",
     "msg_rate": "8 /sec",
     "send_cost": "289916988550 ns/GB",
@@ -813,7 +813,7 @@
     "loc_cpus_used": "110 % cpus",
     "rem_cpus_used": "101 % cpus"
   },
-  "willy-10/willy-12": {
+  "NODE10/NODE12": {
     "bw": "4227072 bytes/sec",
     "msg_rate": "19 /sec",
     "send_cost": "160175131795 ns/GB",
@@ -824,7 +824,7 @@
     "loc_cpus_used": "95.5 % cpus",
     "rem_cpus_used": "106 % cpus"
   },
-  "willy-3/willy-7": {
+  "NODE3/NODE7": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "send_cost": "924246601893 ns/GB",
@@ -835,7 +835,7 @@
     "loc_cpus_used": "157 % cpus",
     "rem_cpus_used": "115 % cpus"
   },
-  "willy-1/willy-6": {
+  "NODE1/NODE6": {
     "bw": "425984 bytes/sec",
     "msg_rate": "6 /sec",
     "send_cost": "653948128664 ns/GB",
@@ -846,7 +846,7 @@
     "loc_cpus_used": "76.5 % cpus",
     "rem_cpus_used": "108 % cpus"
   },
-  "willy-5/willy-8": {
+  "NODE5/NODE8": {
     "bw": "79822848 bytes/sec",
     "msg_rate": "60 /sec",
     "send_cost": "20156595928 ns/GB",
@@ -857,7 +857,7 @@
     "loc_cpus_used": "125 % cpus",
     "rem_cpus_used": "113 % cpus"
   },
-  "willy-15/willy-2": {
+  "NODE15/NODE2": {
     "bw": "10878976 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "81163771609 ns/GB",
@@ -868,7 +868,7 @@
     "loc_cpus_used": "111 % cpus",
     "rem_cpus_used": "66 % cpus"
   },
-  "willy-3/willy-m": {
+  "NODE3/NODEm": {
     "bw": "17530880 bytes/sec",
     "msg_rate": "19 /sec",
     "send_cost": "55174511818 ns/GB",
@@ -879,7 +879,7 @@
     "loc_cpus_used": "100 % cpus",
     "rem_cpus_used": "109 % cpus"
   },
-  "willy-11/willy-9": {
+  "NODE11/NODE9": {
     "bw": "17760256 bytes/sec",
     "msg_rate": "19 /sec",
     "send_cost": "44984034513 ns/GB",
@@ -890,7 +890,7 @@
     "loc_cpus_used": "100 % cpus",
     "rem_cpus_used": "112 % cpus"
   },
-  "willy-12/willy-14": {
+  "NODE12/NODE14": {
     "bw": "86409216 bytes/sec",
     "msg_rate": "63 /sec",
     "send_cost": "11611179232 ns/GB",
@@ -901,7 +901,7 @@
     "loc_cpus_used": "87 % cpus",
     "rem_cpus_used": "106 % cpus"
   },
-  "willy-13/willy-4": {
+  "NODE13/NODE4": {
     "bw": "425984 bytes/sec",
     "msg_rate": "6 /sec",
     "send_cost": "588893897202 ns/GB",
@@ -912,7 +912,7 @@
     "loc_cpus_used": "102 % cpus",
     "rem_cpus_used": "106 % cpus"
   },
-  "willy-10/willy-16": {
+  "NODE10/NODE16": {
     "bw": "10223616 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "105011331266 ns/GB",
@@ -923,7 +923,7 @@
     "loc_cpus_used": "118 % cpus",
     "rem_cpus_used": "176 % cpus"
   },
-  "willy-1/willy-5": {
+  "NODE1/NODE5": {
     "bw": "425984 bytes/sec",
     "msg_rate": "6 /sec",
     "send_cost": "585828534635 ns/GB",
@@ -934,7 +934,7 @@
     "loc_cpus_used": "103 % cpus",
     "rem_cpus_used": "112 % cpus"
   },
-  "willy-6/willy-8": {
+  "NODE6/NODE8": {
     "bw": "73105408 bytes/sec",
     "msg_rate": "60 /sec",
     "send_cost": "13676594510 ns/GB",
@@ -945,7 +945,7 @@
     "loc_cpus_used": "100 % cpus",
     "rem_cpus_used": "138 % cpus"
   },
-  "willy-15/willy-3": {
+  "NODE15/NODE3": {
     "bw": "2588672 bytes/sec",
     "msg_rate": "8 /sec",
     "send_cost": "276727205038 ns/GB",
@@ -956,7 +956,7 @@
     "loc_cpus_used": "117 % cpus",
     "rem_cpus_used": "102 % cpus"
   },
-  "willy-11/willy-2": {
+  "NODE11/NODE2": {
     "bw": "6979584 bytes/sec",
     "msg_rate": "13 /sec",
     "send_cost": "137329096525 ns/GB",
@@ -967,7 +967,7 @@
     "loc_cpus_used": "102 % cpus",
     "rem_cpus_used": "94 % cpus"
   },
-  "willy-7/willy-m": {
+  "NODE7/NODEm": {
     "bw": "884736 bytes/sec",
     "msg_rate": "8 /sec",
     "send_cost": "428895676836 ns/GB",
@@ -978,7 +978,7 @@
     "loc_cpus_used": "102 % cpus",
     "rem_cpus_used": "103 % cpus"
   },
-  "willy-12/willy-9": {
+  "NODE12/NODE9": {
     "bw": "18382848 bytes/sec",
     "msg_rate": "19 /sec",
     "send_cost": "53052078768 ns/GB",
@@ -989,7 +989,7 @@
     "loc_cpus_used": "115 % cpus",
     "rem_cpus_used": "97 % cpus"
   },
-  "willy-13/willy-16": {
+  "NODE13/NODE16": {
     "bw": "32243712 bytes/sec",
     "msg_rate": "30 /sec",
     "send_cost": "6228076974 ns/GB",
@@ -999,7 +999,7 @@
     "latency": "33333333 ns",
     "rem_cpus_used": "146 % cpus"
   },
-  "willy-14/willy-4": {
+  "NODE14/NODE4": {
     "bw": "589824 bytes/sec",
     "msg_rate": "6 /sec",
     "send_cost": "437266781271 ns/GB",
@@ -1010,7 +1010,7 @@
     "loc_cpus_used": "126 % cpus",
     "rem_cpus_used": "143 % cpus"
   },
-  "willy-10/willy-5": {
+  "NODE10/NODE5": {
     "bw": "88145920 bytes/sec",
     "msg_rate": "65 /sec",
     "send_cost": "14043881719 ns/GB",
@@ -1021,7 +1021,7 @@
     "loc_cpus_used": "113 % cpus",
     "rem_cpus_used": "108 % cpus"
   },
-  "willy-1/willy-3": {
+  "NODE1/NODE3": {
     "bw": "20185088 bytes/sec",
     "msg_rate": "19 /sec",
     "send_cost": "60805702964 ns/GB",
@@ -1032,7 +1032,7 @@
     "loc_cpus_used": "144 % cpus",
     "rem_cpus_used": "134 % cpus"
   },
-  "willy-15/willy-8": {
+  "NODE15/NODE8": {
     "bw": "10354688 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "75450916685 ns/GB",
@@ -1043,7 +1043,7 @@
     "loc_cpus_used": "106 % cpus",
     "rem_cpus_used": "94 % cpus"
   },
-  "willy-11/willy-7": {
+  "NODE11/NODE7": {
     "bw": "18219008 bytes/sec",
     "msg_rate": "20 /sec",
     "send_cost": "46836347100 ns/GB",
@@ -1054,7 +1054,7 @@
     "loc_cpus_used": "99 % cpus",
     "rem_cpus_used": "100 % cpus"
   },
-  "willy-2/willy-6": {
+  "NODE2/NODE6": {
     "bw": "425984 bytes/sec",
     "msg_rate": "6 /sec",
     "send_cost": "571510992648 ns/GB",
@@ -1065,7 +1065,7 @@
     "loc_cpus_used": "101 % cpus",
     "rem_cpus_used": "96.5 % cpus"
   },
-  "willy-4/willy-m": {
+  "NODE4/NODEm": {
     "bw": "16580608 bytes/sec",
     "msg_rate": "18 /sec",
     "send_cost": "58089012443 ns/GB",
@@ -1076,7 +1076,7 @@
     "loc_cpus_used": "108 % cpus",
     "rem_cpus_used": "89 % cpus"
   },
-  "willy-16/willy-9": {
+  "NODE16/NODE9": {
     "bw": "10715136 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "83080198424 ns/GB",
@@ -1086,7 +1086,7 @@
     "latency": "71428571 ns",
     "loc_cpus_used": "61.5 % cpus"
   },
-  "willy-1/willy-14": {
+  "NODE1/NODE14": {
     "bw": "4915200 bytes/sec",
     "msg_rate": "10 /sec",
     "send_cost": "149473848700 ns/GB",
@@ -1097,7 +1097,7 @@
     "loc_cpus_used": "100 % cpus",
     "rem_cpus_used": "106 % cpus"
   },
-  "willy-13/willy-5": {
+  "NODE13/NODE5": {
     "bw": "12353536 bytes/sec",
     "msg_rate": "16 /sec",
     "send_cost": "55453555413 ns/GB",
@@ -1108,7 +1108,7 @@
     "loc_cpus_used": "97 % cpus",
     "rem_cpus_used": "102 % cpus"
   },
-  "willy-12/willy-15": {
+  "NODE12/NODE15": {
     "bw": "79593472 bytes/sec",
     "msg_rate": "60 /sec",
     "send_cost": "1109730158 ns/GB",
@@ -1119,7 +1119,7 @@
     "loc_cpus_used": "1 % cpus",
     "rem_cpus_used": "90 % cpus"
   },
-  "willy-10/willy-3": {
+  "NODE10/NODE3": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "send_cost": "851279764902 ns/GB",
@@ -1130,7 +1130,7 @@
     "loc_cpus_used": "100 % cpus",
     "rem_cpus_used": "108 % cpus"
   },
-  "willy-11/willy-8": {
+  "NODE11/NODE8": {
     "bw": "18219008 bytes/sec",
     "msg_rate": "20 /sec",
     "send_cost": "759143717 ns/GB",
@@ -1141,7 +1141,7 @@
     "loc_cpus_used": "3 % cpus",
     "rem_cpus_used": "93 % cpus"
   },
-  "willy-6/willy-m": {
+  "NODE6/NODEm": {
     "bw": "425984 bytes/sec",
     "msg_rate": "6 /sec",
     "send_cost": "550406314557 ns/GB",
@@ -1152,7 +1152,7 @@
     "loc_cpus_used": "105 % cpus",
     "rem_cpus_used": "94 % cpus"
   },
-  "willy-4/willy-7": {
+  "NODE4/NODE7": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "send_cost": "16061882865 ns/GB",
@@ -1162,7 +1162,7 @@
     "latency": "200000000 ns",
     "rem_cpus_used": "122 % cpus"
   },
-  "willy-1/willy-16": {
+  "NODE1/NODE16": {
     "bw": "13205504 bytes/sec",
     "msg_rate": "14 /sec",
     "send_cost": "341359927 ns/GB",
@@ -1173,7 +1173,7 @@
     "loc_cpus_used": "0.5 % cpus",
     "rem_cpus_used": "136 % cpus"
   },
-  "willy-14/willy-2": {
+  "NODE14/NODE2": {
     "bw": "4751360 bytes/sec",
     "msg_rate": "10 /sec",
     "send_cost": "159853982195 ns/GB",
@@ -1184,7 +1184,7 @@
     "loc_cpus_used": "99.5 % cpus",
     "rem_cpus_used": "118 % cpus"
   },
-  "willy-5/willy-9": {
+  "NODE5/NODE9": {
     "bw": "86802432 bytes/sec",
     "msg_rate": "65 /sec",
     "send_cost": "226139885 ns/GB",
@@ -1195,7 +1195,7 @@
     "loc_cpus_used": "0.5 % cpus",
     "rem_cpus_used": "144 % cpus"
   },
-  "willy-11/willy-15": {
+  "NODE11/NODE15": {
     "bw": "79233024 bytes/sec",
     "msg_rate": "56 /sec",
     "send_cost": "431213258 ns/GB",
@@ -1206,7 +1206,7 @@
     "loc_cpus_used": "0.5 % cpus",
     "rem_cpus_used": "131 % cpus"
   },
-  "willy-13/willy-3": {
+  "NODE13/NODE3": {
     "bw": "425984 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "621654382687 ns/GB",
@@ -1217,7 +1217,7 @@
     "loc_cpus_used": "102 % cpus",
     "rem_cpus_used": "88 % cpus"
   },
-  "willy-10/willy-6": {
+  "NODE10/NODE6": {
     "bw": "86573056 bytes/sec",
     "msg_rate": "64 /sec",
     "send_cost": "338457421 ns/GB",
@@ -1227,7 +1227,7 @@
     "latency": "15625000 ns",
     "loc_cpus_used": "1 % cpus"
   },
-  "willy-16/willy-7": {
+  "NODE16/NODE7": {
     "bw": "10223616 bytes/sec",
     "msg_rate": "15 /sec",
     "send_cost": "857235321 ns/GB",
@@ -1236,7 +1236,7 @@
     "recv_cpus_used": "3 % cpus",
     "latency": "66666667 ns"
   },
-  "willy-12/willy-2": {
+  "NODE12/NODE2": {
     "bw": "8093696 bytes/sec",
     "msg_rate": "11 /sec",
     "send_cost": "116156874274 ns/GB",
@@ -1246,7 +1246,7 @@
     "latency": "90909091 ns",
     "loc_cpus_used": "120 % cpus"
   },
-  "willy-4/willy-8": {
+  "NODE4/NODE8": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "recv_cost": "5009969148280 ns/GB",
@@ -1255,7 +1255,7 @@
     "loc_cpus_used": "0.5 % cpus",
     "rem_cpus_used": "0.5 % cpus"
   },
-  "willy-1/willy-11": {
+  "NODE1/NODE11": {
     "bw": "7471104 bytes/sec",
     "msg_rate": "12 /sec",
     "send_cost": "74896622172 ns/GB",
@@ -1266,7 +1266,7 @@
     "loc_cpus_used": "78 % cpus",
     "rem_cpus_used": "0.5 % cpus"
   },
-  "willy-5/willy-m": {
+  "NODE5/NODEm": {
     "bw": "425984 bytes/sec",
     "msg_rate": "6 /sec",
     "send_cost": "601375801375 ns/GB",
@@ -1277,14 +1277,14 @@
     "loc_cpus_used": "104 % cpus",
     "rem_cpus_used": "100 % cpus"
   },
-  "willy-3/willy-9": {
+  "NODE3/NODE9": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "send_cost": "33908420644 ns/GB",
     "send_cpus_used": "5 % cpus",
     "latency": "200000000 ns"
   },
-  "willy-14/willy-6": {
+  "NODE14/NODE6": {
     "bw": "12156928 bytes/sec",
     "msg_rate": "15.5 /sec",
     "send_cost": "368569776 ns/GB",
@@ -1293,7 +1293,7 @@
     "recv_cpus_used": "0.5 % cpus",
     "latency": "64516129 ns"
   },
-  "willy-16/willy-8": {
+  "NODE16/NODE8": {
     "bw": "11960320 bytes/sec",
     "msg_rate": "15 /sec",
     "send_cost": "365918195 ns/GB",
@@ -1302,7 +1302,7 @@
     "recv_cpus_used": "1 % cpus",
     "latency": "66666667 ns"
   },
-  "willy-10/willy-2": {
+  "NODE10/NODE2": {
     "bw": "851968 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "417073558007 ns/GB",
@@ -1313,7 +1313,7 @@
     "loc_cpus_used": "13.5 % cpus",
     "rem_cpus_used": "3 % cpus"
   },
-  "willy-13/willy-7": {
+  "NODE13/NODE7": {
     "bw": "21069824 bytes/sec",
     "msg_rate": "21 /sec",
     "send_cost": "219867273 ns/GB",
@@ -1323,7 +1323,7 @@
     "latency": "47619048 ns",
     "loc_cpus_used": "5 % cpus"
   },
-  "willy-15/willy-5": {
+  "NODE15/NODE5": {
     "bw": "6455296 bytes/sec",
     "msg_rate": "12 /sec",
     "send_cost": "144926572723 ns/GB",
@@ -1333,7 +1333,7 @@
     "latency": "83333333 ns",
     "loc_cpus_used": "134 % cpus"
   },
-  "willy-4/willy-9": {
+  "NODE4/NODE9": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "send_cost": "3390841938 ns/GB",
@@ -1342,7 +1342,7 @@
     "recv_cpus_used": "0.5 % cpus",
     "latency": "200000000 ns"
   },
-  "willy-11/willy-13": {
+  "NODE11/NODE13": {
     "bw": "85721088 bytes/sec",
     "msg_rate": "63 /sec",
     "send_cost": "114298043 ns/GB",
@@ -1352,7 +1352,7 @@
     "latency": "15873016 ns",
     "rem_cpus_used": "99 % cpus"
   },
-  "willy-12/willy-6": {
+  "NODE12/NODE6": {
     "bw": "11010048 bytes/sec",
     "msg_rate": "15 /sec",
     "recv_cost": "908261233 ns/GB",
@@ -1360,7 +1360,7 @@
     "latency": "67000000 ns",
     "loc_cpus_used": "7.96 % cpus"
   },
-  "willy-1/willy-10": {
+  "NODE1/NODE10": {
     "bw": "884736 bytes/sec",
     "msg_rate": "7 /sec",
     "send_cost": "1774277758 ns/GB",
@@ -1370,7 +1370,7 @@
     "latency": "142857143 ns",
     "rem_cpus_used": "1.5 % cpus"
   },
-  "willy-14/willy-7": {
+  "NODE14/NODE7": {
     "bw": "21168128 bytes/sec",
     "msg_rate": "21 /sec",
     "send_cost": "442283731 ns/GB",
@@ -1381,7 +1381,7 @@
     "loc_cpus_used": "1 % cpus",
     "rem_cpus_used": "0.5 % cpus"
   },
-  "willy-3/willy-8": {
+  "NODE3/NODE8": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "recv_cost": "25431314536 ns/GB",
@@ -1390,7 +1390,7 @@
     "loc_cpus_used": "0.5 % cpus",
     "rem_cpus_used": "0.5 % cpus"
   },
-  "willy-6/willy-9": {
+  "NODE6/NODE9": {
     "bw": "88408064 bytes/sec",
     "msg_rate": "65 /sec",
     "send_cost": "165736300 ns/GB",
@@ -1400,7 +1400,7 @@
     "latency": "15384615 ns",
     "rem_cpus_used": "0.5 % cpus"
   },
-  "willy-12/willy-5": {
+  "NODE12/NODE5": {
     "bw": "11075584 bytes/sec",
     "msg_rate": "15 /sec",
     "send_cost": "1537409443 ns/GB",
@@ -1411,12 +1411,12 @@
     "loc_cpus_used": "0.5 % cpus",
     "rem_cpus_used": "1 % cpus"
   },
-  "willy-10/willy-4": {
+  "NODE10/NODE4": {
     "bw": "196608 bytes/sec",
     "msg_rate": "5 /sec",
     "latency": "200000000 ns"
   },
-  "willy-14/willy-8": {
+  "NODE14/NODE8": {
     "bw": "21135360 bytes/sec",
     "msg_rate": "20.9 /sec",
     "send_cost": "218294545 ns/GB",
@@ -1425,7 +1425,7 @@
     "recv_cpus_used": "1 % cpus",
     "latency": "47857143 ns"
   },
-  "willy-7/willy-9": {
+  "NODE7/NODE9": {
     "bw": "345014272 bytes/sec",
     "msg_rate": "279 /sec",
     "send_cost": "216089355 ns/GB",
@@ -1436,7 +1436,7 @@
     "loc_cpus_used": "1.5 % cpus",
     "rem_cpus_used": "1.5 % cpus"
   },
-  "willy-13/willy-6": {
+  "NODE13/NODE6": {
     "bw": "12353536 bytes/sec",
     "msg_rate": "15 /sec",
     "recv_cost": "4452166546 ns/GB",
@@ -1444,7 +1444,7 @@
     "latency": "66666667 ns",
     "loc_cpus_used": "6.5 % cpus"
   },
-  "willy-5/willy-7": {
+  "NODE5/NODE7": {
     "bw": "72286208 bytes/sec",
     "msg_rate": "61 /sec",
     "send_cost": "271026443 ns/GB",
@@ -1454,6 +1454,6 @@
     "latency": "16393443 ns",
     "loc_cpus_used": "1 % cpus"
   },
-  "slaves": "willy-m/willy-1/willy-2/willy-3/willy-4/willy-5/willy-6/willy-7/willy-8/willy-9/willy-10/willy-11/willy-12/willy-13/willy-14/willy-15/willy-16",
+  "slaves": "NODEm/NODE1/NODE2/NODE3/NODE4/NODE5/NODE6/NODE7/NODE8/NODE9/NODE10/NODE11/NODE12/NODE13/NODE14/NODE15/NODE16",
   "timestamp": "2020-12-06 16:30:03.185768"
 }
