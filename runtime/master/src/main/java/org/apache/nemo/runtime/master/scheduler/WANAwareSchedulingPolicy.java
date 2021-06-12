@@ -131,7 +131,6 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
 
     Collection<String> closeNodes = getCloseNodes(nodeSpace, task);
 
-    // 여기서 하나의 node를 고른다 -> 그 node와 가장 적은 latency를 가지는 node를 costSpace에서 읽어온다.
     if (closeNodes.stream().count() == 0) {
       OptionalDouble averageLatency = latencySumSpace.entrySet().stream().mapToDouble(i -> i.getValue()).average();
       Collection<ExecutorRepresenter> lowLatencyExecutors;
