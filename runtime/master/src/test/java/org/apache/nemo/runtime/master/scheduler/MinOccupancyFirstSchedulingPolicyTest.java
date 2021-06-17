@@ -38,7 +38,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /**
- * Tests {@link MinOccupancyFirstSchedulingPolicy}
+ * Tests {@link WANAwareSchedulingPolicy}
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ExecutorRepresenter.class, Task.class})
@@ -61,7 +61,7 @@ public final class MinOccupancyFirstSchedulingPolicyTest {
   @Test
   public void test() throws InjectionException {
     final SchedulingPolicy schedulingPolicy = Tang.Factory.getTang().newInjector()
-      .getInstance(MinOccupancyFirstSchedulingPolicy.class);
+      .getInstance(WANAwareSchedulingPolicy.class);
     final ExecutorRepresenter a0 = mockExecutorRepresenter(1);
     final ExecutorRepresenter a1 = mockExecutorRepresenter(2);
     final ExecutorRepresenter a2 = mockExecutorRepresenter(2);

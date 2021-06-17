@@ -19,8 +19,16 @@
 
 package org.apache.nemo.runtime.master.scheduler;
 
+import avro.shaded.com.google.common.collect.Lists;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.beam.repackaged.core.org.apache.commons.lang3.SerializationUtils;
 import org.apache.beam.repackaged.core.org.apache.commons.lang3.mutable.MutableObject;
+import org.apache.nemo.common.dag.DAG;
+import org.apache.nemo.common.ir.vertex.IRVertex;
+import org.apache.nemo.common.ir.vertex.OperatorVertex;
+import org.apache.nemo.common.ir.vertex.SourceVertex;
+import org.apache.nemo.runtime.common.plan.RuntimeEdge;
+import org.apache.nemo.runtime.common.plan.StageEdge;
 import org.apache.nemo.runtime.common.plan.Task;
 import org.apache.nemo.runtime.master.resource.ExecutorRepresenter;
 import org.apache.nemo.runtime.master.resource.Link;
@@ -51,6 +59,9 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
 
   @Override
   public ExecutorRepresenter selectExecutor(final Collection<ExecutorRepresenter> executors, final Task task) {
+    final DAG<IRVertex, RuntimeEdge<IRVertex>> irDag = SerializationUtils.deserialize(task.getSerializedIRDag());
+    final List<IRVertex> reverseTopologicallySorted = Lists.reverse(irDag.getTopologicalSort());
+    Collection<String> currentIncomingEdges = new ArrayList<String>();
 
     byte[] jsonData = null;
 
@@ -97,66 +108,50 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
       latencySumSpace.put(key.split("/")[1], latencySumSpace.get(key.split("/")[1]) + links.get(key).getLatency());
     }
 
+    for (IRVertex irVertex : reverseTopologicallySorted) {
+      if (irVertex instanceof SourceVertex) {
+        return lessLatencySelectExecutor(latencySumSpace, executors, task);
+      }
+
+      if (!(irVertex instanceof OperatorVertex)) {
+        return lessLatencySelectExecutor(latencySumSpace, executors, task);
+      }
+
+      task.getTaskIncomingEdges()
+        .stream()
+        .filter(inEdge -> inEdge.getDstIRVertex().getId().equals(irVertex.getId())).forEach(
+        incomingEdge -> currentIncomingEdges.add(incomingEdge.getId())
+      );
+    }
+
+    if (currentIncomingEdges.stream().count() == 0) {
+      return lessLatencySelectExecutor(latencySumSpace, executors, task);
+    }
+
     executorRegistry.viewExecutors(fromExecutors -> {
       final MutableObject<Set<ExecutorRepresenter>> allExecutorsSet = new MutableObject<>(fromExecutors);
       allExecutors = allExecutorsSet.getValue();
     });
 
-    Map<String, Map<String, Map<String, Map<String, String>>>> nodeSpace = new HashMap<>();
+    Map<String, Collection<String>> edgeNodeSpace = new HashMap<>();
 
-    Map<String, String> nodeExecutorMap = new HashMap<>();
+    for (ExecutorRepresenter iterExecutor : allExecutors) {
 
-    for (ExecutorRepresenter curExecutor : allExecutors) {
-      nodeExecutorMap.put(curExecutor.getNodeName(), curExecutor.getExecutorId());
-      for (Task curTask : curExecutor.getRunningTasks()) {
-        String planId = curTask.getPlanId();
-        String taskId = curTask.getTaskId();
-        String stageId = taskId.split("Stage")[1].split("-")[0];
-        String taskIndex = taskId.split("Stage")[1].split("-")[1];
-        String attemptNum = taskId.split("Stage")[1].split("-")[2];
-        if (nodeSpace.get(planId) == null) {
-          nodeSpace.put(planId, new HashMap<>());
-        }
-        if (nodeSpace.get(planId).get(stageId) == null) {
-          nodeSpace.get(planId).put(stageId, new HashMap<>());
-        }
-        if (nodeSpace.get(planId).get(stageId).get(taskIndex) == null) {
-          nodeSpace.get(planId).get(stageId).put(taskIndex, new HashMap<>());
-        }
-        if (nodeSpace.get(planId).get(stageId).get(taskIndex).get(attemptNum) == null) {
-          nodeSpace.get(planId).get(stageId).get(taskIndex).put(attemptNum, curExecutor.getNodeName());
+      for (Task curTask : iterExecutor.getRunningTasks()) {
+        for (StageEdge outgoingEdge : curTask.getTaskOutgoingEdges()) {
+          if (edgeNodeSpace.get(outgoingEdge.getId()) == null) {
+            Collection<String> tempNodeList = new ArrayList<>();
+            edgeNodeSpace.put(outgoingEdge.getId(), tempNodeList);
+          }
+          edgeNodeSpace.get(outgoingEdge.getId()).add(iterExecutor.getNodeName());
         }
       }
     }
 
-    Collection<String> closeNodes = getCloseNodes(nodeSpace, task);
+    Collection<String> closeNodes = getNodesFromIncomingEdges(edgeNodeSpace, currentIncomingEdges);
 
     if (closeNodes.stream().count() == 0) {
-      OptionalDouble averageLatency = latencySumSpace.entrySet().stream().mapToDouble(i -> i.getValue()).average();
-      Collection<ExecutorRepresenter> lowLatencyExecutors;
-
-      if (!averageLatency.isPresent()) {
-        lowLatencyExecutors = executors;
-      } else {
-        Map<String, Long> lowLatencySumSpace = new HashMap<>();
-        for (String node : latencySumSpace.keySet()) {
-          if (latencySumSpace.get(node) <= averageLatency.getAsDouble()) {
-            lowLatencySumSpace.put(node, latencySumSpace.get(node));
-          }
-        }
-        Collection<String> executorIds = new ArrayList<String>();
-        for (String node : lowLatencySumSpace.keySet()) {
-          executorIds.add(nodeExecutorMap.get(node));
-        }
-        lowLatencyExecutors = executors.stream().filter(i-> executorIds.contains(i.getExecutorId())).collect(Collectors.toList());
-      }
-
-      if (lowLatencyExecutors.stream().count() == 0) {
-        lowLatencyExecutors = executors;
-      }
-
-      return minOccupancySelectExecutor(lowLatencyExecutors, task);
-
+      return lessLatencySelectExecutor(latencySumSpace, executors, task);
     } else {
       String chosenCloseNode = closeNodes.stream().skip((int) (closeNodes.size() * Math.random())).findFirst().orElseThrow(() -> new RuntimeException("No such node"));
       Collection<ExecutorRepresenter> executorsWithoutClosest;
@@ -183,7 +178,7 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
       }
 
       if (costSpace.get(chosenCloseNode) == null) {
-        return minOccupancySelectExecutor(executors, task);
+        return lessLatencySelectExecutor(latencySumSpace, executors, task);
       }
 
       final OptionalInt minLatency =
@@ -217,51 +212,51 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
         .orElseThrow(() -> new RuntimeException("No such executor"));
     }
   }
+
   /**
-   * Get the nodes where closest tasks to the current target task are running in.
-   * Information about a task can be stratificated into "planId - taskId(stageId - taskIndex - attemptNum)"
-   * Reading this hierarchy from the top, as two tasks' information has more stages in common, the two tasks can be seen as close.
-   *
-   * @param nodeSpace       the mapping of which tasks and its running executor's nodeName.
-   * @param task            the task to schedule.
+   * Get the nodes where incoming edges start from
+   * @param edgeNodeSpace        map of outgoing edge - node
+   * @param incomingEdges        incoming edges of task to schedule
    */
-  private Collection<String> getCloseNodes(final Map<String, Map<String, Map<String, Map<String, String>>>> nodeSpace, final Task task) {
-    String planId = task.getPlanId();
-    String taskId = task.getTaskId();
-    String stageId = taskId.split("Stage")[1].split("-")[0];
-    String taskIndex = taskId.split("Stage")[1].split("-")[1];
-    String attemptNum = taskId.split("Stage")[1].split("-")[2];
-
-    Collection<String> closeNodes = new ArrayList<String>();
-
-    if (nodeSpace.get(planId) != null) {
-      if (nodeSpace.get(planId).get(stageId) != null) {
-        if (nodeSpace.get(planId).get(stageId).get(taskIndex) != null) {
-          if (nodeSpace.get(planId).get(stageId).get(taskIndex).get(attemptNum) != null) {
-            closeNodes.add(nodeSpace.get(planId).get(stageId).get(taskIndex).get(attemptNum));
-          } else {
-            for (String attemptNumRoot : nodeSpace.get(planId).get(stageId).get(taskIndex).keySet()) {
-              closeNodes.add(nodeSpace.get(planId).get(stageId).get(taskIndex).get(attemptNumRoot));
-            }
-          }
-        } else {
-          for (String taskIndexRoot : nodeSpace.get(planId).get(stageId).keySet()) {
-            for (String attemptNumRoot : nodeSpace.get(planId).get(stageId).get(taskIndexRoot).keySet()) {
-              closeNodes.add(nodeSpace.get(planId).get(stageId).get(taskIndexRoot).get(attemptNumRoot));
-            }
-          }
-        }
-      } else {
-        for (String stageRoot : nodeSpace.get(planId).keySet()) {
-          for (String taskIndexRoot : nodeSpace.get(planId).get(stageRoot).keySet()) {
-            for (String attemptNumRoot : nodeSpace.get(planId).get(stageRoot).get(taskIndexRoot).keySet()) {
-              closeNodes.add(nodeSpace.get(planId).get(stageRoot).get(taskIndexRoot).get(attemptNumRoot));
-            }
-          }
+  private Collection<String> getNodesFromIncomingEdges(final Map<String, Collection<String>> edgeNodeSpace, Collection<String> incomingEdges) {
+    Collection<String> nodeList = new ArrayList<>();
+    for (String incomingEdge : incomingEdges) {
+      if (edgeNodeSpace.get(incomingEdge) != null) {
+        for (String nodeName : edgeNodeSpace.get(incomingEdge)) {
+          nodeList.add(nodeName);
         }
       }
     }
-    return closeNodes;
+    return nodeList;
+  }
+
+  /**
+   * Chooses a set of Executors out of given executors, on which have less latency sum.
+   * @param latencySumSpace   map of node - latency sum
+   * @param executors         executors to choose from
+   * @param task              task to schedule
+   */
+  private ExecutorRepresenter lessLatencySelectExecutor(final Map<String, Long> latencySumSpace, final Collection<ExecutorRepresenter> executors, final Task task) {
+    OptionalDouble averageLatency = latencySumSpace.entrySet().stream().mapToDouble(i -> i.getValue()).average();
+    Collection<ExecutorRepresenter> lowLatencyExecutors;
+
+    if (!averageLatency.isPresent()) {
+      lowLatencyExecutors = executors;
+    } else {
+      Map<String, Long> lowLatencySumSpace = new HashMap<>();
+      for (String node : latencySumSpace.keySet()) {
+        if (latencySumSpace.get(node) <= averageLatency.getAsDouble()) {
+          lowLatencySumSpace.put(node, latencySumSpace.get(node));
+        }
+      }
+      lowLatencyExecutors = executors.stream().filter(i-> lowLatencySumSpace.keySet().contains(i.getNodeName())).collect(Collectors.toList());
+    }
+
+    if (lowLatencyExecutors.stream().count() == 0) {
+      lowLatencyExecutors = executors;
+    }
+
+    return minOccupancySelectExecutor(lowLatencyExecutors, task);
   }
 
   /**

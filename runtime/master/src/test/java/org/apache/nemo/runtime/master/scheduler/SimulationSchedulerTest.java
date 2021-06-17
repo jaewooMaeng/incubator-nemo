@@ -65,7 +65,7 @@ public final class SimulationSchedulerTest {
     injector.bindVolatileInstance(PlanRewriter.class, mock(PlanRewriter.class));
     injector.bindVolatileInstance(SchedulingConstraintRegistry.class, mock(SchedulingConstraintRegistry.class));
     final SchedulingPolicy schedulingPolicy = Tang.Factory.getTang().newInjector()
-      .getInstance(MinOccupancyFirstSchedulingPolicy.class);
+      .getInstance(WANAwareSchedulingPolicy.class);
     injector.bindVolatileInstance(SchedulingPolicy.class, schedulingPolicy);
     injector.bindVolatileInstance(BlockManagerMaster.class, mock(BlockManagerMaster.class));
     injector.bindVolatileInstance(ClientRPC.class, mock(ClientRPC.class));
