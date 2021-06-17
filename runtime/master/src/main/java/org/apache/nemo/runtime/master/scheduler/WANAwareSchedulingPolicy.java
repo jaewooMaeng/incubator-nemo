@@ -63,6 +63,7 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
     final List<IRVertex> reverseTopologicallySorted = Lists.reverse(irDag.getTopologicalSort());
     Collection<String> currentIncomingEdges = new ArrayList<String>();
 
+    // Read WAN environment
     byte[] jsonData = null;
 
     try {
@@ -90,6 +91,7 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
       e.printStackTrace();
     }
 
+    // Build costSpace and latencySumSpace
     Map<String, Map<String, Integer>> costSpace = new HashMap<>();
     Map<String, Long> latencySumSpace = new HashMap<>();
 
@@ -108,6 +110,7 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
       latencySumSpace.put(key.split("/")[1], latencySumSpace.get(key.split("/")[1]) + links.get(key).getLatency());
     }
 
+    // Check if this task requires reading inputs(from source or parent)
     for (IRVertex irVertex : reverseTopologicallySorted) {
       if (irVertex instanceof SourceVertex) {
         return lessLatencySelectExecutor(latencySumSpace, executors, task);
@@ -117,6 +120,7 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
         return lessLatencySelectExecutor(latencySumSpace, executors, task);
       }
 
+      // save incoming edges' ids
       task.getTaskIncomingEdges()
         .stream()
         .filter(inEdge -> inEdge.getDstIRVertex().getId().equals(irVertex.getId())).forEach(
@@ -128,11 +132,13 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
       return lessLatencySelectExecutor(latencySumSpace, executors, task);
     }
 
+    // Read all executors(even the ones that did not meet the constraints)
     executorRegistry.viewExecutors(fromExecutors -> {
       final MutableObject<Set<ExecutorRepresenter>> allExecutorsSet = new MutableObject<>(fromExecutors);
       allExecutors = allExecutorsSet.getValue();
     });
 
+    // Build edge - node map
     Map<String, Collection<String>> edgeNodeSpace = new HashMap<>();
 
     for (ExecutorRepresenter iterExecutor : allExecutors) {
@@ -148,6 +154,7 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
       }
     }
 
+    // have close nodes the nodes where the incoming edges started from
     Collection<String> closeNodes = getNodesFromIncomingEdges(edgeNodeSpace, currentIncomingEdges);
 
     if (closeNodes.stream().count() == 0) {
@@ -171,12 +178,14 @@ public final class WANAwareSchedulingPolicy implements SchedulingPolicy {
         executorsWithoutClosest = executors;
       }
 
+      // the only node in close nodes is chosen itself
       if (executorsWithoutClosest.stream().count() == 0) {
         return executors.stream()
           .findFirst()
           .orElseThrow(() -> new RuntimeException("No such executor"));
       }
 
+      // WAN environment information not complete
       if (costSpace.get(chosenCloseNode) == null) {
         return lessLatencySelectExecutor(latencySumSpace, executors, task);
       }
